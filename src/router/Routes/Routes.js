@@ -7,6 +7,9 @@ import Login from '../../pages/Login/Login';
 import NotFound from '../../pages/NotFound/NotFound';
 import Footer from '../../shared/Footer/Footer';
 import Chefs from '../../pages/Home/Chefs/Chefs';
+import PrivateRoute from '../PrivateRoutes/PrivateRoute';
+import Chef from '../../pages/Home/Chefs/Chef';
+import VeiwDetails from '../../pages/ViewDetails/VeiwDetails';
 
 const router = createBrowserRouter([
     {
@@ -21,6 +24,11 @@ const router = createBrowserRouter([
                 path: '/chef',
                 element: <Chefs></Chefs>
             },
+            {
+                path: '/chefDetails/:id',
+                element: <PrivateRoute><VeiwDetails></VeiwDetails></PrivateRoute>
+            },
+
             {
                 path: '/login',
                 element: <Login></Login>
@@ -38,7 +46,7 @@ const router = createBrowserRouter([
                 element: <NotFound></NotFound>
             }
         ]
-    }
+    },
 ]);
 
 export default router;

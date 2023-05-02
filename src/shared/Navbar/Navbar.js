@@ -9,6 +9,7 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
+    console.log(user?.displayName)
 
     const menuItem = <>
         <li><Link to='/'>Home</Link></li>
@@ -17,7 +18,7 @@ const Navbar = () => {
             user?.uid ?
                 <div className='flex items-center'>
                     <li className='font-semibold '>
-                        <div className="avatar">
+                        <div title={user?.displayName} className="avatar">
                             <div className="w-16 h-16 rounded-full">
                                 <img src={user?.photoURL} alt='' />
                             </div>

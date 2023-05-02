@@ -1,12 +1,16 @@
 import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import img from '../../assets/images/login/4957136.jpg'
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContex);
 
+    let navigate = useNavigate();
+    let location = useLocation();
+
+    let from = location.state?.from?.pathname || "/";
 
     const handleLogin = event => {
         event.preventDefault()
@@ -19,6 +23,7 @@ const Login = () => {
             .then(result => {
                 form.reset();
                 console.log(result.user)
+                navigate(from, { replace: true });
 
             })
             .catch(e => console.error(e));

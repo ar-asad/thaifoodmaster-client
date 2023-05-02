@@ -16,7 +16,7 @@ const Chef = ({ chef }) => {
                 <p className='font-bold text-sltae-700 text-lg'>Number of Recipes : {recipes}</p>
                 <p className='font-bold text-sltae-700 text-lg'>Likes : {likes}</p>
                 <div className="card-actions justify-end">
-                    <Link to={`/checkOut/${id}`}>
+                    <Link to={`/chefDetails/${id}`}>
                         <button className="btn btn-outline btn-primary">veiw recipe<TbArrowRight></TbArrowRight></button>
                     </Link>
                 </div>
