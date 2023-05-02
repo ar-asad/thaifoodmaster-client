@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import img from '../../assets/images/login/4957136.jpg'
 import { Link } from 'react-router-dom';
+import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
-    // const { createUser, googleSignIn, updateUserProfile, verifyEmail } = useContext(AuthContex);
+    const { createUser, googleSignIn, updateUserProfile, verifyEmail } = useContext(AuthContex);
 
     const handleSignup = event => {
         event.preventDefault()
@@ -15,17 +16,14 @@ const Register = () => {
         const password = form.password.value;
         console.log(name, email, password);
 
-        // createUser(email, password)
-        //     .then(result => {
-        //         console.log(result.user)
-        //         form.reset()
-        //         handleUpdateProfileUser(name, photoURL)
-        //         // handleEmailVarification();
-        //         // toast.success('Please verify your email address');
+        createUser(email, password)
+            .then(result => {
+                console.log(result.user)
+                form.reset()
+                // handleUpdateProfileUser(name, photoURL)
 
-
-        //     })
-        //     .catch(e => console.error(e));
+            })
+            .catch(e => console.error(e));
     };
 
     const handleGoogleSignIn = () => {
@@ -71,13 +69,13 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="email" name='email' placeholder="email" className="input input-bordered" />
+                            <input type="email" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
                             <label className="label">
                                 <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>

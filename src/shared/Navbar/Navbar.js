@@ -4,7 +4,6 @@ import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
     const { user } = useContext(AuthContex);
-    console.log(user)
 
     const handleLogOut = () => {
         // logOut()
@@ -16,8 +15,7 @@ const Navbar = () => {
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
         {
-            user ? <>
-                <li><Link to='/dashboard'>Dashboard</Link></li>
+            user?.uid ? <>
                 <button className="btn btn-ghost" onClick={handleLogOut}>Sign Out</button>
             </>
                 :
