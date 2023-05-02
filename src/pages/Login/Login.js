@@ -25,9 +25,9 @@ const Login = () => {
     }
 
     const handleGoogleLogIn = () => {
-        // googleSignIn()
-        //     .then(result => console.log(result.user))
-        //     .catch(e => console.log(e.message))
+        googleSignIn()
+            .then(result => console.log(result.user))
+            .catch(e => console.log(e.message))
     }
 
     return (
@@ -62,8 +62,8 @@ const Login = () => {
                     </form>
                     <div className='text-center mb-4'>
                         <p className='mb-2'>Or Sign Up with </p>
-                        <button onClick={handleGoogleLogIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-blue-500'></FaGoogle></button>
-                        <button className='mr-4 p-3 bg-slate-100 rounded-full text-blue-500'><FaGithub className='text-xl '></FaGithub></button>
+                        <button onClick={handleGoogleLogIn} className='mr-4 p-3 bg-slate-100 hover:bg-slate-300 rounded-full'><FaGoogle className='text-xl text-blue-500'></FaGoogle></button>
+                        <button className='mr-4 p-3 bg-slate-100 rounded-full text-blue-500 hover:bg-slate-300'><FaGithub className='text-xl '></FaGithub></button>
                     </div>
                     <p className='text-center'>New to Thaifoodmaster ? <Link className='text-blue-500 font-bold' to='/register'>Signup</Link></p>
                 </div>

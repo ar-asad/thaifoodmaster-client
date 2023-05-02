@@ -4,8 +4,6 @@ import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContex);
-    console.log(user?.displayName)
-
     const handleLogOut = () => {
         logOut()
             .then(() => { })
@@ -18,12 +16,15 @@ const Navbar = () => {
         {
             user?.uid ?
                 <div className='flex items-center'>
-                    <li className='font-semibold '> {user?.displayName}</li>
+                    <li className='font-semibold '>
+                        <div className="avatar">
+                            <div className="w-16 h-16 rounded-full">
+                                <img src={user?.photoURL} alt='' />
+                            </div>
+                        </div>
+                    </li>
                     <button className="btn btn-ghost text-lg" onClick={handleLogOut}>Log out</button>
                 </div>
-                // <>
-                // //     <button className="btn btn-ghost" onClick={handleLogOut}>Sign Out</button>
-                // // </>
                 :
                 <li><Link to='/login'>Login</Link></li>
         }
