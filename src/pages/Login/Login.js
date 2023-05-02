@@ -29,10 +29,10 @@ const Login = () => {
     }
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="hero min-h-screen ">
             <div className="hero-content flex-col lg:flex-row gap-20  ">
                 <div className="text-center lg:text-left w-1/2">
-                    <img className='w-3/4' src={img} alt="" />
+                    <img className='w-4/5' src={img} alt="" />
                 </div>
                 <div className="w-1/2 card flex-shrink-0 max-w-sm shadow-2xl bg-base-100 py-20">
                     <form onSubmit={handleLogin} className="card-body">
@@ -63,7 +63,7 @@ const Login = () => {
                         <button onClick={handleGoogleLogIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-blue-500'></FaGoogle></button>
                         <button className='mr-4 p-3 bg-slate-100 rounded-full text-blue-500'><FaGithub className='text-xl '></FaGithub></button>
                     </div>
-                    <p className='text-center'>New to Genius Car ? <Link className='text-blue-500 font-bold' to='/register'>Signup</Link></p>
+                    <p className='text-center'>New to Thaifoodmaster ? <Link className='text-blue-500 font-bold' to='/register'>Signup</Link></p>
                 </div>
             </div>
         </div>
