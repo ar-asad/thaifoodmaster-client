@@ -6,6 +6,7 @@ import Register from '../../pages/Login/Register';
 import Login from '../../pages/Login/Login';
 import NotFound from '../../pages/NotFound/NotFound';
 import Footer from '../../shared/Footer/Footer';
+import Chefs from '../../pages/Home/Chefs/Chefs';
 
 const router = createBrowserRouter([
     {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                path: '/chef',
+                element: <Chefs></Chefs>
             },
             {
                 path: '/login',
