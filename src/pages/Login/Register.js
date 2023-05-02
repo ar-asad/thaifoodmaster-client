@@ -91,7 +91,7 @@ const Register = () => {
                         <button onClick={handleGoogleSignIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-orange-500'></FaGoogle></button>
                         <button className='mr-4 p-3 bg-slate-100 rounded-full'><FaGithub className='text-xl '></FaGithub></button>
                     </div>
-                    <p className='text-center'>Already have an account <Link className='text-orange-500 font-bold' to='/login'>Login</Link></p>
+                    <p className='text-center'>Already have an account ? <Link className='text-orange-500 font-bold' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>
