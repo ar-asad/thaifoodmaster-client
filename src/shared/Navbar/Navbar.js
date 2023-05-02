@@ -3,21 +3,27 @@ import { Link } from 'react-router-dom';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Navbar = () => {
-    const { user } = useContext(AuthContex);
+    const { user, logOut } = useContext(AuthContex);
+    console.log(user?.displayName)
 
     const handleLogOut = () => {
-        // logOut()
-        //     .then(() => { })
-        //     .catch(error => console.error(error))
+        logOut()
+            .then(() => { })
+            .catch(error => console.error(error))
     }
 
     const menuItem = <>
         <li><Link to='/'>Home</Link></li>
         <li><Link to='/blog'>Blog</Link></li>
         {
-            user?.uid ? <>
-                <button className="btn btn-ghost" onClick={handleLogOut}>Sign Out</button>
-            </>
+            user?.uid ?
+                <div className='flex items-center'>
+                    <li className='font-semibold '> {user?.displayName}</li>
+                    <button className="btn btn-ghost text-lg" onClick={handleLogOut}>Log out</button>
+                </div>
+                // <>
+                // //     <button className="btn btn-ghost" onClick={handleLogOut}>Sign Out</button>
+                // // </>
                 :
                 <li><Link to='/login'>Login</Link></li>
         }

@@ -36,16 +36,16 @@ const AuthProvider = ({ children }) => {
         return signOut(auth)
     }
 
-    // useEffect(() => {
-    //     const unsubscribe = onAuthStateChanged(auth, currentUser => {
-    //         console.log(currentUser)
-    //         setUser(currentUser);
-    //         setLoading(false)
-    //     });
-    //     return () => {
-    //         unsubscribe();
-    //     }
-    // }, [])
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            console.log(currentUser)
+            setUser(currentUser);
+            setLoading(false)
+        });
+        return () => {
+            unsubscribe();
+        }
+    }, [])
 
     const authInfo = {
         user,

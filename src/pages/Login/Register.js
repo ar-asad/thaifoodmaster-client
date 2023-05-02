@@ -20,7 +20,7 @@ const Register = () => {
             .then(result => {
                 console.log(result.user)
                 form.reset()
-                // handleUpdateProfileUser(name, photoURL)
+                handleUpdateProfileUser(name, photoURL)
 
             })
             .catch(e => console.error(e));
@@ -33,13 +33,15 @@ const Register = () => {
     }
 
     const handleUpdateProfileUser = (name, photoURL) => {
-        // const profile = {
-        //     displayName: name,
-        //     photoURL: photoURL
-        // }
-        // updateUserProfile(profile)
-        //     .then(result => { })
-        //     .catch(e => console.error(e))
+        const profile = {
+            displayName: name,
+            photoURL: photoURL
+        }
+        updateUserProfile(profile)
+            .then(result => {
+                console.log(result.user)
+            })
+            .catch(e => console.error(e))
     }
 
 

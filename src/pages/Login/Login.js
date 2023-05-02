@@ -1,25 +1,27 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import img from '../../assets/images/login/4957136.jpg'
+import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    // const { signIn, googleSignIn } = useContext(AuthContex);
+    const { signIn, googleSignIn } = useContext(AuthContex);
 
 
     const handleLogin = event => {
-        //     event.preventDefault()
-        //     const form = event.target;
-        //     const email = form.email.value;
-        //     const password = form.password.value;
-        //     console.log(email, password);
+        event.preventDefault()
+        const form = event.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
 
-        //     signIn(email, password)
-        //         .then(result => {
-        //             form.reset(); 
-        //             console.log(result.user)
-        //         })
-        //         .catch(e => console.error(e));
+        signIn(email, password)
+            .then(result => {
+                form.reset();
+                console.log(result.user)
+
+            })
+            .catch(e => console.error(e));
     }
 
     const handleGoogleLogIn = () => {
