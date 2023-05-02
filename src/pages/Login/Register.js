@@ -88,10 +88,10 @@ const Register = () => {
                     </form>
                     <div className='text-center mb-4'>
                         <p className='mb-2'>Or Sign Up with </p>
-                        <button onClick={handleGoogleSignIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-orange-500'></FaGoogle></button>
-                        <button className='mr-4 p-3 bg-slate-100 rounded-full'><FaGithub className='text-xl '></FaGithub></button>
+                        <button onClick={handleGoogleSignIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-blue-500'></FaGoogle></button>
+                        <button className='mr-4 p-3 bg-slate-100 rounded-full  text-blue-500'><FaGithub className='text-xl '></FaGithub></button>
                     </div>
-                    <p className='text-center'>Already have an account ? <Link className='text-orange-500 font-bold' to='/login'>Login</Link></p>
+                    <p className='text-center'>Already have an account ? <Link className='text-blue-500 font-bold' to='/login'>Login</Link></p>
                 </div>
             </div>
         </div>

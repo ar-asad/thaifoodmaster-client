@@ -60,10 +60,10 @@ const Login = () => {
                     </form>
                     <div className='text-center mb-4'>
                         <p className='mb-2'>Or Sign Up with </p>
-                        <button onClick={handleGoogleLogIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-orange-500'></FaGoogle></button>
-                        <button className='mr-4 p-3 bg-slate-100 rounded-full'><FaGithub className='text-xl '></FaGithub></button>
+                        <button onClick={handleGoogleLogIn} className='mr-4 p-3 bg-slate-100 rounded-full'><FaGoogle className='text-xl text-blue-500'></FaGoogle></button>
+                        <button className='mr-4 p-3 bg-slate-100 rounded-full text-blue-500'><FaGithub className='text-xl '></FaGithub></button>
                     </div>
-                    <p className='text-center'>New to Genius Car <Link className='text-orange-500 font-bold' to='/register'>Signup</Link></p>
+                    <p className='text-center'>New to Genius Car ? <Link className='text-blue-500 font-bold' to='/register'>Signup</Link></p>
                 </div>
             </div>
         </div>
