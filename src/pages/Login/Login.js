@@ -31,13 +31,19 @@ const Login = () => {
 
     const handleGoogleLogIn = () => {
         googleSignIn()
-            .then(result => console.log(result.user))
+            .then(result => {
+                console.log(result.user)
+                navigate(from, { replace: true });
+            })
             .catch(e => console.log(e.message))
     };
 
     const handleGithubSignIn = () => {
         githubSignIn()
-            .then(result => console.log(result.user))
+            .then(result => {
+                console.log(result.user)
+                navigate(from, { replace: true });
+            })
             .catch(e => console.log(e.message))
     }
 

@@ -10,6 +10,7 @@ import Chefs from '../../pages/Home/Chefs/Chefs';
 import PrivateRoute from '../PrivateRoutes/PrivateRoute';
 import Chef from '../../pages/Home/Chefs/Chef';
 import VeiwDetails from '../../pages/ViewDetails/VeiwDetails';
+import Blog from '../../pages/Blog/Blog';
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
             {
                 path: '/chef',
                 element: <Chefs></Chefs>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             },
             {
                 path: '/chefDetails/:id',
