@@ -20,7 +20,7 @@ const Recipe = ({ recipe }) => {
             <div className="card-body  ">
                 <h2 className="card-title font-bold text-2xl ">{name}</h2>
                 <p className='font-bold text-sltae-600 '>Cooking Method : {method} Years</p>
-                <p className='font-bold text-sltae-600 text-lg'>Number of Recipes : {ingredients.map((ing, i) => <li key={i} > {ing}</li>)}</p>
+                <p className='font-bold text-sltae-600 text-lg'>Ingredients : {ingredients.map((ing, i) => <li className=' font-normal' key={i} > {ing}</li>)}</p>
                 <p className='font-bold text-sltae-600 text-lg'>Rating : {rating}</p>
                 <div className="card-actions justify-end">
                     <Link>

@@ -1,11 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle, FaGithub } from "react-icons/fa";
 import img from '../../assets/images/login/4957136.jpg'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Register = () => {
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState(null);
     const { createUser, googleSignIn, updateUserProfile, githubSignIn } = useContext(AuthContex);
+
+    let navigate = useNavigate();
+
+    function handlePasswordChange(event) {
+        setPassword(event.target.value);
+        if (event.target.value.length < 6) {
+            setPasswordError('The password is less than 6 characters');
+        } else {
+            setPasswordError(null);
+        }
+    }
 
     const handleSignup = event => {
         event.preventDefault()
@@ -13,28 +26,32 @@ const Register = () => {
         const name = form.name.value;
         const photoURL = form.photoURL.value;
         const email = form.email.value;
-        const password = form.password.value;
-        console.log(name, email, password);
 
         createUser(email, password)
             .then(result => {
                 console.log(result.user)
                 form.reset()
                 handleUpdateProfileUser(name, photoURL)
-
+                navigate('/')
             })
             .catch(e => console.error(e));
     };
 
     const handleGoogleSignIn = () => {
         googleSignIn()
-            .then(result => console.log(result.user))
+            .then(result => {
+                console.log(result.user)
+                navigate('/')
+            })
             .catch(e => console.log(e.message))
     };
 
     const handleGithubSignIn = () => {
         githubSignIn()
-            .then(result => console.log(result.user))
+            .then(result => {
+                console.log(result.user)
+                navigate('/')
+            })
             .catch(e => console.log(e.message))
     }
 
@@ -83,7 +100,8 @@ const Register = () => {
                             <label className="label">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            <input onChange={handlePasswordChange} type="password" name='password' placeholder="password" className="input input-bordered" required />
+                            {passwordError && <p className='text-red-500 font-semibold mt-2'>{passwordError}</p>}
                             <label className="label">
                                 <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
