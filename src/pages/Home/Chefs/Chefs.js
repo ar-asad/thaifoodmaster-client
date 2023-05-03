@@ -11,12 +11,11 @@ const Chefs = () => {
             return data;
         }
     });
-    console.log(chefs)
     return (
         <div className='mt-24'>
             <div className='text-center w-2/4 mx-auto'>
                 <h4 className='font-bold text-blue-500 text-lg'>Chefs</h4>
-                <h1 className="text-5xl font-bold">All Chefs Here</h1>
+                <h1 className="text-5xl font-bold">Our Experts chef</h1>
                 <p className="py-6">An executive chef is the highest-ranking chef in a restaurant or hotel. They are responsible for creating menus, managing the kitchen staff, and ensuring the quality and consistency of the food.  </p>
 
             </div>
