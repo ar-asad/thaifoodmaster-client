@@ -7,7 +7,7 @@ const Recipies = ({ id }) => {
     const { data: recipes = [], isLoading } = useQuery({
         queryKey: ['recipes'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/recipes/${id}`)
+            const res = await fetch(`https://recipe-hunter-server1-arasad1.vercel.app/recipes/${id}`)
             const data = await res.json();
             return data;
         }

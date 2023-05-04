@@ -9,7 +9,7 @@ const VeiwDetails = () => {
     const { data: chef = {} } = useQuery({
         queryKey: ['chefDetails'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/chefDetails/${id}`)
+            const res = await fetch(`https://recipe-hunter-server1-arasad1.vercel.app/chefDetails/${id}`)
             const data = await res.json();
             return data;
         }

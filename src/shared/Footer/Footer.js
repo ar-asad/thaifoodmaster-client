@@ -4,22 +4,22 @@ const Footer = () => {
     return (
         <footer className="footer p-32 bg-black text-white">
             <div>
-                {/* <img src={logo} alt="" /> */}
-                <p>ACME Industries Ltd.<br />Providing reliable tech since 1992</p>
+                <h2 className='text-xl font-bold'>Thaifoodmaster</h2>
+                <p class="logo-col__text">Copyright @ 2027 by Thaifoodmaster.Inc.All rights reserved.</p>
             </div>
             <div>
-                <span className="footer-title">Services</span>
-                <a href="/" className="link link-hover">Branding</a>
-                <a href="/" className="link link-hover">Design</a>
-                <a href="/" className="link link-hover">Marketing</a>
-                <a href="/" className="link link-hover">Advertisement</a>
+                <span className="footer-title">Contact us</span>
+                <a href="/" className="link link-hover">623 Harrison St., 2nd Floor </a>
+                <a href="/" className="link link-hover">San Francisco, CA 94107</a>
+                <a href="/" className="link link-hover">415-201-6370</a>
+                <a href="/" className="link link-hover">hello@omnifood.com</a>
             </div>
             <div>
-                <span className="footer-title">Company</span>
-                <a href="/" className="link link-hover">About us</a>
-                <a href="/" className="link link-hover">Contact</a>
-                <a href="/" className="link link-hover">Jobs</a>
-                <a href="/" className="link link-hover">Press kit</a>
+                <span className="footer-title">Account</span>
+                <a href="/" className="link link-hover">Create account</a>
+                <a href="/" className="link link-hover">Sign in</a>
+                <a href="/" className="link link-hover">IOS app</a>
+                <a href="/" className="link link-hover">Android app</a>
             </div>
             <div>
                 <span className="footer-title">Legal</span>
