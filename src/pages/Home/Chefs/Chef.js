@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { TbArrowRight } from "react-icons/tb";
+import LazyLoad from 'react-lazy-load';
 
 
 const Chef = ({ chef }) => {
@@ -8,7 +9,9 @@ const Chef = ({ chef }) => {
     return (
         <div className="card w-96 bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={picture} alt="Shoes" className="rounded-xl" />
+                <LazyLoad>
+                    <img src={picture} alt="Shoes" className="rounded-xl" />
+                </LazyLoad>
             </figure>
             <div className="card-body  ">
                 <h2 className="card-title font-bold text-2xl ">{name}</h2>

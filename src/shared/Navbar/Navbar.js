@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
+import LazyLoad from 'react-lazy-load';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContex);
@@ -9,25 +10,30 @@ const Navbar = () => {
             .then(() => { })
             .catch(error => console.error(error))
     }
-    console.log(user?.displayName)
 
     const menuItem = <>
-        <li><Link to='/'>Home</Link></li>
-        <li><Link to='/blog'>Blog</Link></li>
+
+        <li><NavLink to='/' className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""}>Home</NavLink></li>
+        <li><NavLink to='/blog' className={({ isActive, isPending }) =>
+            isPending ? "pending" : isActive ? "active" : ""}>Blog</NavLink></li>
         {
             user?.uid ?
                 <div className='flex items-center'>
                     <li className='font-semibold '>
                         <div title={user?.displayName} className="avatar">
                             <div className="w-16 h-16 rounded-full">
-                                <img src={user?.photoURL} alt='' />
+                                <LazyLoad>
+                                    <img src={user?.photoURL} alt='' />
+                                </LazyLoad>
                             </div>
                         </div>
                     </li>
                     <button className="btn btn-ghost lg:text-lg" onClick={handleLogOut}>Log out</button>
                 </div>
                 :
-                <li><Link to='/login'>Login</Link></li>
+                <li><NavLink to='/login' className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "active" : ""}>Login</NavLink></li>
         }
     </>
     return (

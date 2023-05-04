@@ -13,17 +13,6 @@ const firebaseConfig = {
     appId: process.env.REACT_APP_appId,
 
 };
-
-// const firebaseConfig = {
-//     apiKey: "AIzaSyCLtr6NpsUfSUtRu_6upZ35ZMMC2IODSM8",
-//     authDomain: "thaifoodmaster-302a1.firebaseapp.com",
-//     projectId: "thaifoodmaster-302a1",
-//     storageBucket: "thaifoodmaster-302a1.appspot.com",
-//     messagingSenderId: "971792564410",
-//     appId: "1:971792564410:web:da1a8a6264f2f332ac0283"
-// };
-
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 export default app;

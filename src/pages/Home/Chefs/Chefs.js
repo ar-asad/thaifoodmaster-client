@@ -1,9 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 import Chef from './Chef';
+import Loading from '../../../shared/Loading/Loading';
 
 const Chefs = () => {
 
-    const { data: chefs = [] } = useQuery({
+    const { data: chefs = [], isLoading } = useQuery({
         queryKey: ['chef'],
         queryFn: async () => {
             const res = await fetch('http://localhost:5000/chef')
@@ -11,6 +12,10 @@ const Chefs = () => {
             return data;
         }
     });
+
+    if (isLoading) {
+        <Loading></Loading>
+    }
     return (
         <div className='mt-24'>
             <div className='text-center w-2/4 mx-auto'>

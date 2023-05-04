@@ -20,6 +20,7 @@
 - Tailwind
 - daisyUI
 - React useQuery
+- React-lazy-load
 - React Icons
 - React Toastify
 - Node js

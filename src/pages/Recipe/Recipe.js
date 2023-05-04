@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { toast } from 'react-hot-toast';
 import { TbArrowRight } from 'react-icons/tb';
+import LazyLoad from 'react-lazy-load';
 import { Link } from 'react-router-dom';
 
 const Recipe = ({ recipe }) => {
@@ -15,7 +16,9 @@ const Recipe = ({ recipe }) => {
     return (
         <div className="card  bg-base-100 shadow-xl">
             <figure className="px-10 pt-10">
-                <img src={image} alt="Shoes" className="rounded-xl" />
+                <LazyLoad>
+                    <img src={image} alt="Shoes" className="rounded-xl" />
+                </LazyLoad>
             </figure>
             <div className="card-body  ">
                 <h2 className="card-title font-bold text-2xl ">{name}</h2>

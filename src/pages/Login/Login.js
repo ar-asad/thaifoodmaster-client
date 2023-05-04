@@ -5,7 +5,7 @@ import img from '../../assets/images/login/4957136.jpg'
 import { AuthContex } from '../../context/AuthProvider/AuthProvider';
 
 const Login = () => {
-    const [error, setError] = useState('');
+    const [error, setError] = useState(null);
 
     const { signIn, googleSignIn, githubSignIn } = useContext(AuthContex);
 
@@ -28,7 +28,9 @@ const Login = () => {
                 navigate(from, { replace: true });
 
             })
-            .catch(e => console.error(e));
+            .catch(e => {
+                setError(e.message)
+            });
     }
 
     const handleGoogleLogIn = () => {
@@ -74,6 +76,7 @@ const Login = () => {
                                 <Link href="#" className="label-text-alt link link-hover">Forgot password?</Link>
                             </label>
                         </div>
+                        {error && <p className='text-red-500 font-semibold mt-2'>{error}</p>}
                         <div className="form-control mt-6">
                             <input type="submit" className="btn btn-primary" value='login' />
 

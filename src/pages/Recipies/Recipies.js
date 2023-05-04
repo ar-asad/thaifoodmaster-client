@@ -1,6 +1,7 @@
 import { useQuery } from '@tanstack/react-query';
 import React from 'react';
 import Recipe from '../Recipe/Recipe';
+import Loading from '../../shared/Loading/Loading';
 
 const Recipies = ({ id }) => {
     const { data: recipes = [], isLoading } = useQuery({
@@ -11,15 +12,15 @@ const Recipies = ({ id }) => {
             return data;
         }
     });
-    //  if()
+    if (isLoading) {
+        <Loading></Loading>
+    }
     return (
         <div>
             <div className='mt-24'>
                 <div className='text-center w-2/4 mx-auto'>
                     <h4 className='font-bold text-blue-500 text-lg'>Recipes</h4>
                     <h1 className="text-5xl font-bold mb-6">My Recipes</h1>
-
-
                 </div>
                 <div className='grid lg:grid-cols-3 grid-cols-1 md:grid-cols-2 gap-6'>
                     {
