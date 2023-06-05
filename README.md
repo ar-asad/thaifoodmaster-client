@@ -2,7 +2,6 @@
 
 ### Website Live Link:[https://thaifoodmaster-302a1.web.app/](https://thaifoodmaster-302a1.web.app/)
 
-### Client repository link:[]()
 
 ### About Thaifoodmaser:
 - This is a one kind of food recipe website.
