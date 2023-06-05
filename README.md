@@ -4,10 +4,10 @@
 
 
 ### About Thaifoodmaser:
-- This is a one kind of food recipe website.
-- In this home component User can see all the chefs who cook differnts kind of food    with their experience.
-- Have a button every chefs card clicking this button user can see details the chef and which food he serve.
-- User can also react favorite food in click favorite button.
+- This website offers Thai food prepared by Thai chefs.
+- User Google Sign in and Email/Password Login are secured by Firebase authentication.
+- It is possible to view all the dishes prepared by each chef and to view the details   of his details information.
+- In the menu, users can add their favorite foods as favorites.
 - User cannot enter the viewdetails component without login or signup.
 - Have a blog componet there I given some question answer.
 
@@ -15,8 +15,8 @@
 # Technology Used:
 - ReactJS
 - React Router
-- firebase
-- Tailwind
+- Firebase
+- Tailwind CSS
 - daisyUI
 - React useQuery
 - React-lazy-load
